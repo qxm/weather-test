@@ -1,0 +1,26 @@
+# Spring properties
+spring:
+  application:
+     name: weather-service  # Service registers under this name
+  freemarker:
+    enabled: false           # Ignore Eureka dashboard FreeMarker templates
+  thymeleaf:
+    cache: false             # Allow Thymeleaf templates to be reloaded at runtime
+  data:
+    mongodb:      
+      uri: mongodb+srv://qxm:sasa@cluster0-sqvha.mongodb.net/test?retryWrites=true&w=majority 
+      database: test
+
+weather:
+  server: 
+    uri: https://api.darksky.net/forecast/93dded3d11e0ec081359913aa28f3bde/
+    suffix: ?units=si&exclude=minutely  
+    
+# Map the error path to error template (for Thymeleaf)
+error:
+  path=/error
+
+
+# HTTP Server
+server:
+  port: 3000   # HTTP (Tomcat) port

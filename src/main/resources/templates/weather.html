@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Getting Started: Serving Web Content</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Required meta tags -->
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="css/bootstrap.min.css"
+	crossorigin="anonymous">
+
+</head>
+<body>
+	<script src="jquery-3.3.1.slim.min.js"
+		crossorigin="anonymous"></script>
+	<script
+		src="popper.min.js"
+		crossorigin="anonymous"></script>
+	<script
+		src="bootstrap.min.js"
+		crossorigin="anonymous"></script>
+
+	<div th:each="weather : ${allWeathers}" class="container">
+		<div class="row" th:text="${weather.locationName}"></div>
+		<div class="row">
+			<div class="col-sm">
+			    <span><img width="42" height="42" th:src="@{'https://darksky.net/images/weather-icons/'+ ${weather.currently.icon}+'.png'}" th:alt="${weather.currently.icon}+' Icon'"></img>
+			    </span>
+			    <span th:text="${weather.currently.summary}"></span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm">Temperature</div>
+			<div class="col-sm">Dew Point</div>
+			<div class="col-sm">Humidity</div>
+			<div class="col-sm">Pressure</div>
+			<div class="col-sm">Wind Speed</div>
+			<div class="col-sm">Wind Bearing</div>
+		</div>
+		<div class="row">
+			<div class="col-sm" th:text="${weather.currently.temperature}">One
+				of three columns</div>
+			<div class="col-sm" th:text="${weather.currently.dewPoint}">One
+				of three columns</div>
+			<div class="col-sm" th:text="${weather.currently.humidity}">One
+				of three columns</div>
+			<div class="col-sm" th:text="${weather.currently.pressure}">One
+				of three columns</div>
+			<div class="col-sm" th:text="${weather.currently.windSpeed}">One
+				of three columns</div>
+			<div class="col-sm" th:text="${weather.currently.windBearing}">One
+				of three columns</div>
+		</div>
+		<div class="row">&nbsp;</div>
+	</div>
+
+
+</body>
+</html>
