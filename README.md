@@ -1,4 +1,6 @@
 # weather-test
+mvn spring-boot:run
+
 retrieve the weather
 http://localhost:3000/weather
 
